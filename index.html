@@ -6,17 +6,21 @@
     <link rel="stylesheet" href="app/css/foundation.css">
   </head>
   <body ng-app="rescue">
-    <div ng-controller="NavCtrl">
+    <div ng-controller="NavCtrl as nav">
       <nav class="top-bar">
         <ul class="title-area">
           <li class="name"><h1><a href="">rescue</a></h1></li>
         </ul>
         <section class="top-bar-section">
           <ul class="right">
-            <li><a href="#" ng-show="isLoggedIn()">{{currentUser}}</a></li>
-            <li><a ui-sref="login" ng-hide="isLoggedIn()">Login</a></li>
-            <li><a href="#" ng-show="isLoggedIn()" ng-click="logOut()">Logout</a></li>
-            <li><a ui-sref="register" ng-hide="isLoggedIn()">Register</a></li>
+            <div ng-show="nav.isLoggedIn()">
+              <li><a href="#">{{nav.currentUser()}}</a></li>
+              <li><a href="#" ng-click="nav.logOut()">Logout</a></li>
+            </div>
+            <div ng-hide="nav.isLoggedIn()">
+              <li><a ui-sref="login">Login</a></li>
+              <li><a ui-sref="register">Register</a></li>
+            </div>
           </ul>
         </section>
       </nav>
@@ -27,5 +31,8 @@
     <script src="node_modules/angular/angular.js" charset="utf-8"></script>
     <script src="node_modules/angular-ui-router/build/angular-ui-router.min.js" charset="utf-8"></script>
     <script src="app/js/angularApp.js" charset="utf-8"></script>
+    <script src="services/userFactory.js" charset="utf-8"></script>
+    <script src="controllers/AuthCtrl.js" charset="utf-8"></script>
+    <script src="controllers/NavCtrl.js" charset="utf-8"></script>
   </body>
 </html>

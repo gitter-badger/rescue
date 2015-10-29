@@ -1,7 +1,7 @@
-<h1>Login!</h1>
+<h1>Rescue Registration</h1>
 <h3 ng-show="auth.error">{{auth.error.message}}</h3>
-<form ng-submit="auth.login()">
+<form ng-submit="auth.resgister()">
   <input type="text" ng-model="auth.user.username" />
   <input type="password" ng-model="auth.user.password">
-  <button type="submit">Login!</button>
+  <button type="submit">Register!</button>
 </form>

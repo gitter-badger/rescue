@@ -1,4 +1,4 @@
 <h1>Register!</h1>
-<input type="text" ng-model="auth.user.username" />
-<input type="password" ng-model="auth.user.password">
-<button ng-click="auth.register()">Register!</button>
+<a ui-sref="register.user">Register as a User</a>
+<a ui-sref="register.rescue">Register as a Rescue</a>
+<ui-view></ui-view>

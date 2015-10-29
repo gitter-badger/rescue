@@ -1,0 +1,5 @@
+<h1>User Registration</h1>
+<h3 ng-show="auth.error">{{auth.error.message}}</h3>
+<input type="text" ng-model="auth.user.username" />
+<input type="password" ng-model="auth.user.password">
+<button ng-click="auth.register()">Register!</button>
