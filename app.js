@@ -5,6 +5,10 @@ var passport = require('passport');
 var config = require('./config');
 var morgan = require('morgan');
 var logger = require('./common/logger');
+var mongoose = require('mongoose');
+
+// connect here to not mess with tests
+mongoose.connect(config.MONGO_URL);
 
 require('./models');
 

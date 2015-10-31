@@ -7,5 +7,8 @@ module.exports = {
     "LOGS": {
         "LOG_LEVEL": "debug",
         "LOG_PATH": "../logs/app.log"
+    },
+    "TESTS": {
+        "MONGODB": 'mongodb://localhost/rescue_test'
     }
 };

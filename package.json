@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "node_modules/.bin/mocha"
   },
   "author": "",
   "license": "ISC",
@@ -18,12 +19,14 @@
     "gulp-bower": "0.0.10",
     "gulp-concat": "^2.6.0",
     "jsonwebtoken": "^5.4.1",
+    "mocha": "^2.3.3",
     "mongoose": "^4.2.2",
     "morgan": "^1.6.1",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "rox": "0.0.1-13",
+    "should": "^7.1.1",
     "underscore": "^1.8.3",
     "winston": "^2.0.0",
     "wiredep": "^2.2.2"
