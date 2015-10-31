@@ -1,9 +1,11 @@
+var logger = require('../common/logger');
+
 function index(req, res, next) {
-    console.log('ROUTER!!!!', '/');
+    logger.debug('ROUTER!!!!', '/');
 }
 
 function home(req, res, next) {
-    console.log('we are home..');
+    logger.debug('we are home..');
 }
 
 module.exports = {

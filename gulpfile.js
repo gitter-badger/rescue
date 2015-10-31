@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var wiredep = require('wiredep').stream;
+var config = require('./config');
 
 gulp.task('bower', function() {
   gulp.src('public/app/index.html')
@@ -13,7 +14,7 @@ gulp.task('bower', function() {
 
 gulp.task('browserSync', function() {
   browserSync({
-    proxy: "localhost:7000"
+    proxy: "localhost:" + config.PORT
   });
 });
 

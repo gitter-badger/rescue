@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^1.5.0",
     "body-parser": "^1.14.1",
     "browser-sync": "^2.9.11",
     "express": "^4.13.3",
@@ -22,8 +23,9 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "wiredep": "^2.2.2",
-    "rox": "0.0.1",
-    "winston": "^2.0.0"
+    "rox": "0.0.1-13",
+    "underscore": "^1.8.3",
+    "winston": "^2.0.0",
+    "wiredep": "^2.2.2"
   }
 }
