@@ -3,6 +3,14 @@ var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var wiredep = require('wiredep').stream;
 
+gulp.task('bower', function() {
+  gulp.src('public/app/index.html')
+    .pipe(wiredep({
+      directory: 'public/bower_components'
+    }))
+    .pipe(gulp.dest('public'))
+})
+
 gulp.task('browserSync', function() {
   browserSync({
     proxy: "localhost:7000"
@@ -21,7 +29,7 @@ gulp.task('services', function() {
     .pipe(gulp.dest('./public/app/services'));
 })
 
-gulp.task('watch', ['browserSync', 'controllers', 'services'], function() {
+gulp.task('watch', ['browserSync', 'controllers', 'services', 'bower'], function() {
   gulp.watch('public/css/*.css', browserSync.reload);
   gulp.watch('public/js/*.js', browserSync.reload);
   gulp.watch('public/*.html', browserSync.reload);
