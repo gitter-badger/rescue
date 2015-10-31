@@ -4,6 +4,8 @@ var home = require('./home');
 var auth = require('./auth');
 var jwt = require('jsonwebtoken');
 var config = require('../config');
+var UnauthorizedError = require('../common/errors').UnauthorizedError;
+var ForbiddenError = require('../common/errors').ForbiddenError;
 
 var routes = [
     {"path": "/",           "method": "get",    "controller": home.index, "public": true},
@@ -23,11 +25,11 @@ routes.forEach(function(item) {
                     var token = jwt.verify(req.get('Authorization'), config.SECRET);
                     if(item.roles && item.roles.indexOf(token.role) < 0) {
                         // User doesn't have required role
-                        return next("unauthorized");
+                        return next(new ForbiddenError());
                     }
                     return next();
                 } catch(e) {
-                    return next("unauthorized"); // TODO Add proper exceptions and error handling (http status codes)
+                    return next(new UnauthorizedError);
                 }
             }
             // We should never reach this point
