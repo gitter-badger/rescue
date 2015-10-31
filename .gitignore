@@ -1,5 +1,4 @@
 *.iml
 .idea
-gulpfile.js
 node_modules/
 public/bower_components
