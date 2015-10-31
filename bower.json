@@ -1,0 +1,25 @@
+{
+  "name": "rescue",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ngalluzzo <nicolas@knackhq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ngalluzzo/rescue",
+  "moduleType": [
+    "amd"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.7"
+  }
+}
