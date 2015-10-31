@@ -26,7 +26,7 @@ function register(req, res, next) {
 }
 
 function login(req, res, next) {
-    validator("register", {
+    validator("login", {
         username: req.body.username,
         password: req.body.password
     }, {
