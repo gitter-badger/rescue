@@ -21,7 +21,7 @@ app.use(morgan("combined", { "stream": logger.stream }));
 
 // Error handler
 app.use(function (err, req, res, next) {
-  logger.error("Error:", err);
+  logger.error("Error: " + err.name + ": " + err.message, err);
   res.status(err.httpCode || 500).json({
     error: err.message
   });
